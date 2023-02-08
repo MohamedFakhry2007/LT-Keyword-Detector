@@ -1,0 +1,221 @@
+<html>
+  <head>
+    <title>Result</title>
+<style>
+  body {
+    background-color: #333;
+    color: #f2f2f2;
+  }
+  table {
+    width: 80%;
+    margin: 20px auto;
+    border-collapse: collapse;
+    background-color: #444;
+  }
+  th, td {
+    padding: 8px;
+    text-align: center;
+    border: 1px solid #ddd;
+    color: #f2f2f2;
+  }
+  .headrow {
+    background-color: #555;
+    font-weight: bold;
+    color: #f2f2f2;
+  }
+</style>
+  </head>
+  <body>
+  <table>
+  {% if metatitle %}
+    <tr>
+      <th colspan="1" class="headrow">Title of the Page</th>
+    </tr>
+      <tr>
+        <td>{{ metatitle }}</td>
+      </tr>
+  {% endif %}
+</table>
+
+  <table>
+  {% if metadescription %}
+    <tr>
+      <th colspan="1" class="headrow">Page Meta Description</th>
+    </tr>
+      <tr>
+        <td>{{ metadescription }}</td>
+      </tr>
+  {% endif %}
+</table>
+
+  <table>
+  {% if geturl %}
+    <tr>
+      <th colspan="1" class="headrow">Most used words in Page URL</th>
+    </tr>
+      <tr>
+        <td>{{ geturl }}</td>
+      </tr>
+  {% endif %}
+</table>
+
+  <table>
+  {% if openingp %}
+    <tr>
+      <th colspan="1" class="headrow">Opening Paragraphs of the page</th>
+    </tr>
+      <tr>
+        <td>{{ openingp }}</td>
+      </tr>
+  {% endif %}
+</table>
+
+<table>
+  {% if h1tags %}
+    <tr>
+      <th colspan="1" class="headrow">H1 tags</th>
+    </tr>
+    {% for tag in h1tags %}
+      <tr>
+        <td>{{ tag }}</td>
+      </tr>
+    {% endfor %}
+  {% endif %}
+</table>
+
+    <table>
+  {% if h2tags %}
+    <tr>
+      <th colspan="1" class="headrow">H2 tags</th>
+    </tr>
+    {% for tag in h2tags %}
+      <tr>
+        <td>{{ tag }}</td>
+      </tr>
+    {% endfor %}
+  {% endif %}
+</table>
+
+    <table>
+  {% if h3tags %}
+    <tr>
+      <th colspan="1" class="headrow">H3 tags</th>
+    </tr>
+    {% for tag in h3tags %}
+      <tr>
+        <td>{{ tag }}</td>
+      </tr>
+    {% endfor %}
+  {% endif %}
+</table>
+
+    <table>
+  {% if probability1 %}
+    <tr>
+      <th colspan="2" class="headrow">Most common keywords in Meta Data and URL:</th>
+    </tr>
+    <tr>
+      <th>Keyword</th>
+      <th>Number of Occurrences</th>
+    </tr>
+    {% for tag in probability1 %}
+      <tr>
+        <td>{{ tag[0] }}</td>
+        <td>{{ tag[1] }}</td>
+      </tr>
+    {% endfor %}
+  {% endif %}
+</table>
+
+    <table>
+  {% if commoninh1 %}
+    <tr>
+      <th colspan="2" class="headrow">The commonest keywords in H1 tags are:</th>
+    </tr>
+    <tr>
+      <th>Keyword</th>
+      <th>Number of Occurrences</th>
+    </tr>
+    {% for tag in commoninh1 %}
+      <tr>
+        <td>{{ tag[0] }}</td>
+        <td>{{ tag[1] }}</td>
+      </tr>
+    {% endfor %}
+  {% endif %}
+</table>
+
+    <table>
+  {% if commoninh2 %}
+    <tr>
+      <th colspan="2" class="headrow">The commonest keywords in H2 tags are:</th>
+    </tr>
+    <tr>
+      <th>Keyword</th>
+      <th>Number of Occurrences</th>
+    </tr>
+    {% for tag in commoninh2 %}
+      <tr>
+        <td>{{ tag[0] }}</td>
+        <td>{{ tag[1] }}</td>
+      </tr>
+    {% endfor %}
+  {% endif %}
+</table>
+
+    <table>
+  {% if commoninh3 %}
+    <tr>
+      <th colspan="2" class="headrow">The commonest keywords in H3 tags are:</th>
+    </tr>
+    <tr>
+      <th>Keyword</th>
+      <th>Number of Occurrences</th>
+    </tr>
+    {% for tag in commoninh3 %}
+      <tr>
+        <td>{{ tag[0] }}</td>
+        <td>{{ tag[1] }}</td>
+      </tr>
+    {% endfor %}
+  {% endif %}
+</table>
+
+    <table>
+  {% if commoninp %}
+    <tr>
+      <th colspan="2" class="headrow">The commonest keywords in opening paragraphs are:</th>
+    </tr>
+    <tr>
+      <th>Keyword</th>
+      <th>Number of Occurrences</th>
+    </tr>
+    {% for tag in commoninp %}
+      <tr>
+        <td>{{ tag[0] }}</td>
+        <td>{{ tag[1] }}</td>
+      </tr>
+    {% endfor %}
+  {% endif %}
+</table>
+
+  <table>
+  {% if winningkeywords %}
+    <tr>
+      <th colspan="2" class="headrow">The most likely keywords for this webpage are:</th>
+    </tr>
+    <tr>
+      <th>Keyword</th>
+      <th>Number of Occurrences</th>
+    </tr>
+    {% for tag in winningkeywords %}
+      <tr>
+        <td>{{ tag[0] }}</td>
+        <td>{{ tag[1] }}</td>
+      </tr>
+    {% endfor %}
+  {% endif %}
+</table>
+
+  </body>
+</html>
